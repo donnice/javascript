@@ -1,15 +1,53 @@
 <!DOCTYPE HTML>
 <html>
+<style>
+p{
+	color:yellow;
+	font-family: "arial",sans-serif;
+	font-size: 1.2em;
+	background-color: grey;
+}
+body{
+	background-color: black;
+	color: white;
+}
+.special{
+	font-style: italic;
+	color:green;
+}
+h2.special{
+	text-transform: uppercase;
+}
+/*id*/
+#purchases{
+	border: 1px solid white;
+	background-color: #333;
+	color: #ccc;
+	padding: 1em;
+}
+#purchases li{
+	font-weight: bold;
+}
+</style>
 <head>
 	<title>Shopping list</title>
 </head>
 <body>
-	<h1>What to buy</h1>
+	<h2 class = "special">What to buy</h2>
 	<p title = "reminder">Don't forget to buy this stuff.</p>
-	<ul id = "purchases">
+	<ul id = "purchases">Play
 		<li>A tin of beans</li>
 		<li>Cheese</li>
 		<li>Milk</li>
 	</ul>
+	<script type = "text/javascript">
+	//alert(document.getElementById("purchases"));
+	/*
+	alert(document.getElementsByTagName("*").length);
+	for(var i = 0; i < document.getElementsByTagName("*").length; i++){
+		alert(typeof document.getElementsByTagName("*")[i]);
+	}*/
+	
+	</script>
 </body>
 </html>
