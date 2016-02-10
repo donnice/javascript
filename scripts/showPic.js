@@ -9,7 +9,7 @@ function showPic(whichpic){
 	var text = whichpic.getAttribute("title");
 	var description = document.getElementById("description");
 	description.firstChild.nodeValue = text;
-	alert(description.childNodes.firstChild.nodeValue);
+	//alert(description.childNodes.firstChild.nodeValue);
 
 }
 
@@ -18,4 +18,4 @@ function countBodyChildren(){
 	alert(body_element.nodeType);
 }
 
-window.onload = countBodyChildren;
+//window.onload = countBodyChildren;
