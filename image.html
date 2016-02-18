@@ -5,26 +5,26 @@
 	<script type = "text/javascript" src = "scripts/showPic.js"></script>
 	<link rel = "stylesheet" href = "css/layout.css"
 	type = "text/css" media = "screen"/>
+
 </head>
 <body>
 	<h1>Snapshots</h1>
 	<ul id = "imagegallery">
 		<li>
 			<a href = "images/self.jpg" title = "Engineer"
-			onclick = "showPic(this);
-			return false;">Me-20s</a>
+			>Me-20s</a>
 		</li>
 		<li>
 			<a href = "images/self.jpg" title = "CEO"
-			onclick = "showPic(this);return false;">Me-30s</a>
+			>Me-30s</a>
 		</li>
 		<li>
 			<a href = "images/self.jpg" title = "Doctor"
-			onclick = "showPic(this);return false;">Me-40s</a>
+			>Me-40s</a>
 		</li>
 		<li>
 			<a href = "images/self.jpg" title = "Professor"
-			onclick = "showPic(this);return false;">Me-50+s</a>
+			>Me-50+s</a>
 		</li>
 	</ul>
 	<img id = "placeholder" src = "images/placeholder.gif"
@@ -33,19 +33,32 @@
 
 	<script>
 	function prepareGallery(){
-		if(!document.getElementByTagName) return false;
-		if(!document.getElementById) return false;
-		if(!document.getElementById("imagegallery")) return false;
+		
 		var gallery = document.getElementById("imagegallery");
-		var links = gallery.getElementByTagName("a");
+		var links = gallery.getElementsByTagName("a");
+		alert(links.length);
 		for(var i = 0; i < links.length; i++){
 			links[i].onclick = function(){
-				showPic(this);
-				return false;
+				return showPic(this);
+			}
+		}	
+	}
+
+	
+
+	function addLoadEvent(func){
+		var oldonload = window.onload;
+		if(typeof window.onload != 'function'){
+			window.onload = func;
+		} else {
+			window.onload = function(){
+				oldonload();
+				func();
 			}
 		}
-		
 	}
+	window.onload = prepareGallery;
+	//addLoadEvent(prepareGallery);
 	</script>
 
 </body>
