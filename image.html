@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Snapshots</h1>
-	<ul>
+	<ul id = "imagegallery">
 		<li>
 			<a href = "images/self.jpg" title = "Engineer"
 			onclick = "showPic(this);
@@ -30,6 +30,16 @@
 	<img id = "placeholder" src = "images/placeholder.gif"
 	alt = "my image gallery"/>
 	<p id = "description">Choose an image.</p>
+
+	<script>
+	function prepareGallery(){
+		if(!document.getElementByTagName) return false;
+		if(!document.getElementById) return false;
+		if(!document.getElementById("imagegallery")) return false;
+		
+		
+	}
+	</script>
 
 </body>
 </html>
