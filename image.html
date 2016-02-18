@@ -36,7 +36,14 @@
 		if(!document.getElementByTagName) return false;
 		if(!document.getElementById) return false;
 		if(!document.getElementById("imagegallery")) return false;
-		
+		var gallery = document.getElementById("imagegallery");
+		var links = gallery.getElementByTagName("a");
+		for(var i = 0; i < links.length; i++){
+			links[i].onclick = function(){
+				showPic(this);
+				return false;
+			}
+		}
 		
 	}
 	</script>
